@@ -22,13 +22,6 @@
 
         <section class="section-register--right">
             @if(Session::get('message'))<p class="text-success text-center">{{ Session::get('message') }}</p> @endif
-            @if($errors->any())
-                <ul>
-                    @foreach($errors->all() as $error)
-                        <li class="text-danger">{{ $error }}</li>
-                    @endforeach
-                </ul>
-            @endif
             <h2 class="heading mb-5">Create Your Free Account</h2>
             <p class="heading--sub mb-4 d-inline">
                 High-quality content written on demand by the
@@ -37,21 +30,30 @@
             <p>
                 Sign up is easy and free. You don't pay anything until you're ready to order content.
             </p>
-            <form action=" " method="post">
+            <form action="{{ route('front.register') }}" method="post"> @csrf
                 <div class="mt-3">
-                    <label for="name" class="form-label">First Name</label>
-                    <input type="text" class="form-control u-box-shadow-1" name="name" id="name" />
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control u-box-shadow-1 @error('name') is_invalid @enderror" name="name" id="name" />
+                    @error('name')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="mt-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control u-box-shadow-1" name="email" id="email" />
+                    <input type="email" class="form-control u-box-shadow-1 @error('email') is_invalid @enderror" name="email" id="email" />
+                    @error('email')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="mt-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control u-box-shadow-1" name="password" id="password"/>
+                    <input type="password" class="form-control u-box-shadow-1 @error('password') is_invalid @enderror" name="password" id="password"/>
+                    @error('password')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="mt-5">
-                    <div  class="btn btn-blue" type="submit">Sign Up</div>
+                    <button  class="btn btn-blue" type="submit">Sign Up</button>
 
                 </div>
             </form>
