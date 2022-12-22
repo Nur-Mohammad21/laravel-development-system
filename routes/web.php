@@ -21,6 +21,8 @@ use App\Http\Controllers\RegisterController;
 //});
 Route::get('/', [HomeController::class, 'home'])->name('home.index');
 Route::get('/home-login', [RegisterController::class, 'loginHome'])->name('login.index');
+Route::get('/signUp-login', [RegisterController::class, 'signUp'])->name('login.SignUp');
+Route::get('/forget-password', [RegisterController::class, 'forgetPassword'])->name('password.forget');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

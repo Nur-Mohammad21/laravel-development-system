@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('title')
-    SEO Content
+    Login
 @endsection
 @section('body')
     <main class="section-login">
@@ -32,8 +32,8 @@
                                 </form>
                                 <div class="links">
                                     <p>
-                                        <a href="">Need an account?</a>
-                                        <a href=" ">Forgot Password?</a>
+                                        <a href="{{ route('login.SignUp') }}">Need an account?</a>
+                                        <a href="{{ route('password.forget') }} ">Forgot Password?</a>
                                     </p>
                                 </div>
                                 <div class="back-button">

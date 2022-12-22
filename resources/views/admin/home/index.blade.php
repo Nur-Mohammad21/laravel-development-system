@@ -81,7 +81,7 @@
                             <a class="nav-link" href=" {{ route('login.index') }}">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-white" href=" ">Sign Up</a>
+                            <a class="nav-link btn btn-white" href=" {{ route('login.SignUp') }} ">Sign Up</a>
                         </li>
                     </ul>
                 </div>

@@ -10,4 +10,12 @@ class RegisterController extends Controller
     {
         return view('admin.login.login');
     }
+    public function signUp()
+    {
+        return view('admin.register.register');
+    }
+    public function forgetPassword()
+    {
+        return view('admin.forget.forget');
+    }
 }
