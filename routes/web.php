@@ -20,6 +20,7 @@ use App\Http\Controllers\RegisterController;
 //    return view('welcome');
 //});
 Route::get('/', [HomeController::class, 'home'])->name('home.index');
+Route::get('/home-login', [RegisterController::class, 'loginHome'])->name('login.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

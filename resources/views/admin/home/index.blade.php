@@ -78,7 +78,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="  ">Login</a>
+                            <a class="nav-link" href=" {{ route('login.index') }}">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn btn-white" href=" ">Sign Up</a>
